@@ -12,28 +12,24 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 
-public class CrimeFragment extends Fragment
-{
+public class CrimeFragment extends Fragment {
     private Crime mCrime;
     private EditText mTitleField;
     private Button mDateButton;
     private CheckBox mSolvedCheckBox;
 
-    public CrimeFragment()
-    {
+    public CrimeFragment() {
 
-    }
+    }//end CrimeFragment()
 
     @Override
-    public void onCreate(Bundle savedInstanceState)
-    {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mCrime = new Crime();
-    }
+    }//end onCreate(Bundle)
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState)
-    {
+    public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_crime, parent, false);
 
         mTitleField = (EditText)v.findViewById(R.id.crime_title);
@@ -68,5 +64,5 @@ public class CrimeFragment extends Fragment
         });
         
         return v;
-    }
-}
+    }//end onCreateView(LayoutInflater, ViewGroup, Bundle)
+}//end CrimeFragment class
