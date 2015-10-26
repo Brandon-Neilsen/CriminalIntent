@@ -42,6 +42,12 @@ public class CrimeListFragment extends ListFragment {
         startActivity(i);
     }//end onListItemClick
 
+    @Override
+    public void onResume(){
+        super.onResume();
+        ((CrimeAdapter)getListAdapter()).notifyDataSetChanged();
+    }//end onResume()
+
     private class CrimeAdapter extends ArrayAdapter<Crime> {
         public CrimeAdapter(ArrayList<Crime> crimes){
             super(getActivity(), 0, crimes);
