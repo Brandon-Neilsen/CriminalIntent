@@ -71,4 +71,14 @@ public class CrimeFragment extends Fragment {
         
         return v;
     }//end onCreateView(LayoutInflater, ViewGroup, Bundle)
+
+    public static CrimeFragment newInstance(UUID crimeId){
+        Bundle args = new Bundle();
+        args.putSerializable(EXTRA_CRIME_ID, crimeId);
+
+        CrimeFragment fragment = new CrimeFragment();
+        fragment.setArguments(args);
+
+        return fragment;
+    }//end newInstance(UUID)
 }//end CrimeFragment class
