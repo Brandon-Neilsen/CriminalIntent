@@ -24,4 +24,4 @@ public abstract class SingleFragmentActivity extends FragmentActivity {
         }
     }//end onCreate(Bundle)
 }
-//end CrimeActivity class
+//end SingleFragmentActivity class
