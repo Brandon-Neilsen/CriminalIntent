@@ -1,7 +1,11 @@
 package com.brandon.android.criminalintent;
 
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -32,6 +36,7 @@ public class CrimeFragment extends Fragment {
         mCrime = CrimeLab.get(getActivity()).getCrime(crimeId);
     }//end onCreate(Bundle)
 
+    @TargetApi(11)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_crime, parent, false);
@@ -54,6 +59,14 @@ public class CrimeFragment extends Fragment {
                 //This space is also intentionally left blank
             }
         });
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
+            if (NavUtils.getParentActivityName(getActivity()) != null){
+                AppCompatActivity activity = (AppCompatActivity)getActivity();
+                activity.getSupportActionBar().setDisplayShowHomeEnabled(true);
+                activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                activity.getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+            }
 
         mDateButton = (Button)v.findViewById(R.id.crime_date);
         mDateButton.setText(mCrime.getDate().toString());

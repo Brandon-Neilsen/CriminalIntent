@@ -36,7 +36,6 @@ public class CrimePagerActivity extends FragmentActivity {
                 return mCrimes.size();
             }
         });
-
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener(){
             public void onPageScrollStateChanged(int state){}
             public void onPageScrolled(int pos, float posOffset, int posOffsetPixels){}
@@ -54,5 +53,5 @@ public class CrimePagerActivity extends FragmentActivity {
                 break;
             }
         }
-    }
+    }//end onCreate(Bundle)
 }
