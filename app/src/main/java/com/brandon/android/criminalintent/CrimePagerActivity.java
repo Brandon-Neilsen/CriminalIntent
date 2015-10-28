@@ -39,7 +39,7 @@ public class CrimePagerActivity extends FragmentActivity {
 
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener(){
             public void onPageScrollStateChanged(int state){}
-            public void onPageCrolled(int pos, float posOffset, int posOffsetPixels){}
+            public void onPageScrolled(int pos, float posOffset, int posOffsetPixels){}
             public void onPageSelected(int pos){
                 Crime crime = mCrimes.get(pos);
                 if(crime.getTitle() != null){
