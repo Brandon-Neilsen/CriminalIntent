@@ -66,13 +66,14 @@ public class CrimeFragment extends Fragment {
             }
         });
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
-            if (NavUtils.getParentActivityName(getActivity()) != null){
-                AppCompatActivity activity = (AppCompatActivity)getActivity();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            if (NavUtils.getParentActivityName(getActivity()) != null) {
+                AppCompatActivity activity = (AppCompatActivity) getActivity();
                 activity.getSupportActionBar().setDisplayShowHomeEnabled(true);
                 activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
                 activity.getSupportActionBar().setIcon(R.mipmap.ic_launcher);
             }
+        }
 
         mDateButton = (Button)v.findViewById(R.id.crime_date);
         updateDate();
