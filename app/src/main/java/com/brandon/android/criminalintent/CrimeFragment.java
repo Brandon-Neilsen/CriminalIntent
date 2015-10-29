@@ -25,6 +25,7 @@ public class CrimeFragment extends Fragment {
     private Button mDateButton;
     private CheckBox mSolvedCheckBox;
     private static final String DIALOG_DATE = "date";
+    private static final int REQUEST_DATE = 0;
 
 
     public CrimeFragment() {
@@ -76,6 +77,7 @@ public class CrimeFragment extends Fragment {
             public void onClick(View v){
                 FragmentManager fm = getActivity().getSupportFragmentManager();
                 DatePickerFragment dialog = DatePickerFragment.newInstance(mCrime.getDate());
+                dialog.setTargetFragment(CrimeFragment.this, REQUEST_DATE);
                 dialog.show(fm, DIALOG_DATE);
             }
         });
