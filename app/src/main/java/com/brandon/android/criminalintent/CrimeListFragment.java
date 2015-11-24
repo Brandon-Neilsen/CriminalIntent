@@ -26,6 +26,7 @@ public class CrimeListFragment extends ListFragment {
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
         getActivity().setTitle(R.string.crime_title);
         mCrimes = CrimeLab.get(getActivity()).getCrimes();
         CrimeAdapter adapter = new CrimeAdapter(mCrimes);
