@@ -1,6 +1,5 @@
 package com.brandon.android.criminalintent;
 
-
 import android.annotation.TargetApi;
 import android.content.Intent;
 import android.support.v4.app.ListFragment;
@@ -16,11 +15,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 import java.util.ArrayList;
 
-
 public class CrimeListFragment extends ListFragment {
 
     private static final String TAG = "CrimeListFragment";
     private ArrayList<Crime> mCrimes;
+    private boolean mSubtitleVisible;
 
     public CrimeListFragment() {
     }//end CrimeListFragment()
@@ -33,6 +32,8 @@ public class CrimeListFragment extends ListFragment {
         mCrimes = CrimeLab.get(getActivity()).getCrimes();
         CrimeAdapter adapter = new CrimeAdapter(mCrimes);
         setListAdapter(adapter);
+        setRetainInstance(true);
+        mSubtitleVisible = false;
     }//end onCreate(Bundle)
 
     @Override
