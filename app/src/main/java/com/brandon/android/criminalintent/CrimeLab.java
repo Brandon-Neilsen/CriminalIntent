@@ -28,6 +28,10 @@ public class CrimeLab {
         return sCrimeLab;
     }//end CrimeLab(Context)
 
+    public void addCrime(Crime c){
+        mCrimes.add(c);
+    }//end addCrime(Crime)
+
     public ArrayList<Crime> getCrimes(){
         return mCrimes;
     }//end getCrimes()
