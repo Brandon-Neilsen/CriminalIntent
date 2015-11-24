@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -99,6 +100,17 @@ public class CrimeFragment extends Fragment {
         
         return v;
     }//end onCreateView(LayoutInflater, ViewGroup, Bundle)
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                //To be implemented next
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }//end onOptionsItemSelected(MenuItem)
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data){
