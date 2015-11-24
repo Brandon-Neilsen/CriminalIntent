@@ -2,8 +2,10 @@ package com.brandon.android.criminalintent;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
+import android.os.Build;
 import android.support.v4.app.ListFragment;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -35,6 +37,20 @@ public class CrimeListFragment extends ListFragment {
         setRetainInstance(true);
         mSubtitleVisible = false;
     }//end onCreate(Bundle)
+
+    @TargetApi(11)
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState){
+        View v = super.onCreateView(inflater, parent, savedInstanceState);
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB){
+            if(mSubtitleVisible){
+                getActivity().getActionBar().setSubtitle(R.string.subtitle);
+            }
+
+        }
+        return v;
+    }//end onCreateView(LayoutInflater, ViewGroup, Bundle)
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id){
