@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+
 import java.util.Date;
 import java.util.UUID;
 
@@ -113,6 +114,12 @@ public class CrimeFragment extends Fragment {
                 return super.onOptionsItemSelected(item);
         }
     }//end onOptionsItemSelected(MenuItem)
+
+    @Override
+    public void onPause(){
+        super.onPause();
+        CrimeLab.get(getActivity()).saveCrimes();
+    }//end onPause()
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data){
