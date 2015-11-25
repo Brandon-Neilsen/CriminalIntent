@@ -3,6 +3,7 @@ package com.brandon.android.criminalintent;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.security.MessageDigest;
 import java.util.UUID;
 import java.util.Date;
 
@@ -23,6 +24,15 @@ public class Crime {
         mId = UUID.randomUUID();
         mDate = new Date();
     }//end Crime()
+
+    public Crime(JSONObject json) throws JSONException {
+        mId = UUID.fromString(json.getString(JSON_ID));
+        if (json.has(JSON_TITLE)){
+            mTitle = json.getString(JSON_TITLE);
+        }
+        mSolved = json.getBoolean(JSON_SOLVED);
+        mDate = new Date(json.getLong(JSON_DATE));
+    }//end Crime(JSONObject json)
 
     public UUID getId() {
         return mId;
